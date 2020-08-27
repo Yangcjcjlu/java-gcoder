@@ -15,21 +15,21 @@
     </resultMap>
 
     <select id="load${table.upperCamelName}" resultMap="${table.lowerCamelName}Result">
-        select * from ${table.tableName}
+        select ${table.abbr}.* from ${table.tableName}
         <where>
 
             <%table.fieldArray.filter(function(field){return !field.sqIgnore}).forEach(function(field,index){%>
-            <if test="${field.lowerCamelName}!=null">and `${field.fieldName}`=#{${field.lowerCamelName}}</if><%})%>
+            <if test="${field.lowerCamelName}!=null">and ${table.abbr}.`${field.fieldName}`=#{${field.lowerCamelName}}</if><%})%>
 
         </where>
     </select>
 
     <select id="load${table.upperCamelName}ForPage" resultMap="${table.lowerCamelName}Result">
-        select * from ${table.tableName}
+        select ${table.abbr}.* from ${table.tableName}
         <where>
 
             <%table.fieldArray.filter(function(field){return !field.sqIgnore}).forEach(function(field,index){%>
-            <if test="${field.lowerCamelName}!=null">and `${field.fieldName}`=#{${field.lowerCamelName}}</if><%})%>
+            <if test="${field.lowerCamelName}!=null">and ${table.abbr}.`${field.fieldName}`=#{${field.lowerCamelName}}</if><%})%>
 
         </where>
     </select>
