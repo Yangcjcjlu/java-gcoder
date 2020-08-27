@@ -15,7 +15,8 @@
     </resultMap>
 
     <select id="load${table.upperCamelName}" resultMap="${table.lowerCamelName}Result">
-        select ${table.abbr}.* from ${table.tableName}
+
+        select ${table.abbr}.* from ${table.tableName} ${table.abbr}
         <where>
 
             <%table.fieldArray.filter(function(field){return !field.sqIgnore}).forEach(function(field,index){%>
@@ -25,7 +26,8 @@
     </select>
 
     <select id="load${table.upperCamelName}ForPage" resultMap="${table.lowerCamelName}Result">
-        select ${table.abbr}.* from ${table.tableName}
+
+        select ${table.abbr}.* from ${table.tableName} ${table.abbr}
         <where>
 
             <%table.fieldArray.filter(function(field){return !field.sqIgnore}).forEach(function(field,index){%>
