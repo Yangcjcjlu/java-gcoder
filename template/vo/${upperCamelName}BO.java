@@ -9,7 +9,7 @@ import java.util.Map;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class ${table.upperCamelName}VO extends BaseVO{
+public class ${table.upperCamelName}BO extends BaseVO{
     <%table.fieldArray.filter(function(field){return !field.ignore}).forEach(function(field){%>
     /**
      * ${field.comment}

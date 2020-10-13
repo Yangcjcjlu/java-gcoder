@@ -19,8 +19,8 @@ public class ${table.upperCamelName}DelCmd extends ACmd {
     @Override
     public CmdSign execute(HttpServletRequest request, CmdSign sign) throws Exception {
         CmdSign respSign = new CmdSign(sign);
-        ${table.upperCamelName}VO ${table.lowerCamelName}VO = super.getData(sign, ${table.upperCamelName}VO.class);
-        this.${table.lowerCamelName}Service.delete(${table.lowerCamelName}VO);
+        ${table.upperCamelName}BO ${table.lowerCamelName}BO = super.getData(sign, ${table.upperCamelName}BO.class);
+        this.${table.lowerCamelName}Service.delete(${table.lowerCamelName}BO);
         return respSign;
     }
 

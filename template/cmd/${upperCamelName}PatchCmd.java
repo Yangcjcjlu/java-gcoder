@@ -2,7 +2,7 @@ package ${config.java.package.cmd};
 
 import ${config.java.package.cmd}.CmdSign;
 import ${config.java.package.code}.CmdCode;
-import ${config.java.package.vo}.${table.prefix}.${table.upperCamelName}VO;
+import ${config.java.package.vo}.${table.prefix}.${table.upperCamelName}BO;
 import ${config.java.package.service}.${table.prefix}.I${table.upperCamelName}Service;
 import ${config.java.package.cmd}.ACmd;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +19,8 @@ public class ${table.upperCamelName}PatchCmd extends ACmd {
     @Override
     public CmdSign execute(HttpServletRequest request, CmdSign sign) throws Exception {
         CmdSign respSign = new CmdSign(sign);
-        ${table.upperCamelName}VO ${table.lowerCamelName}VO = super.getData(sign, ${table.upperCamelName}VO.class);
-        this.${table.lowerCamelName}Service.update(${table.lowerCamelName}VO);
+        ${table.upperCamelName}BO ${table.lowerCamelName}BO = super.getData(sign, ${table.upperCamelName}BO.class);
+        this.${table.lowerCamelName}Service.update(${table.lowerCamelName}BO);
         return respSign;
     }
 

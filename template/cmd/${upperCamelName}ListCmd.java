@@ -2,7 +2,7 @@ package ${config.java.package.cmd};
 
 import ${config.java.package.cmd}.CmdSign;
 import ${config.java.package.code}.CmdCode;
-import ${config.java.package.vo}.${table.prefix}.${table.upperCamelName}VO;
+import ${config.java.package.vo}.${table.prefix}.${table.upperCamelName}BO;
 import ${config.java.package.service}.${table.prefix}.I${table.upperCamelName}Service;
 import ${config.java.package.cmd}.ACmd;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ public class ${table.upperCamelName}ListCmd extends ACmd {
         CmdSign respSign = new CmdSign(sign);
 
         HashMap params = super.getData(sign, HashMap.class);
-        List<${table.upperCamelName}VO> ${table.lowerCamelName}List = this.${table.lowerCamelName}Service.list(params);
+        List<${table.upperCamelName}BO> ${table.lowerCamelName}List = this.${table.lowerCamelName}Service.list(params);
         respSign.setSource(super.getSource(${table.lowerCamelName}List,sign));
         return respSign;
     }
