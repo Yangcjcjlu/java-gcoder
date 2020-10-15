@@ -1,7 +1,6 @@
 package ${config.java.package.service}.${table.prefix};
 
-import ${config.java.package.vo}.${table.prefix}.${table.upperCamelName}BO;
-import ${config.java.package.service}.${table.prefix}.I${table.upperCamelName}Service;
+import ${config.java.package.bo}.${table.prefix}.${table.upperCamelName}BO;
 import com.value.mybatis.IDaoRouter;
 import com.value.mybatis.Pagination;
 import org.springframework.beans.factory.annotation.Autowired;

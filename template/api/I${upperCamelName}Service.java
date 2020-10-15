@@ -1,6 +1,6 @@
 package ${config.java.package.service}.${table.prefix};
 
-import ${config.java.package.vo}.${table.prefix}.${table.upperCamelName}BO;
+import ${config.java.package.bo}.${table.prefix}.${table.upperCamelName}BO;
 import com.value.mybatis.Pagination;
 
 import java.util.List;
