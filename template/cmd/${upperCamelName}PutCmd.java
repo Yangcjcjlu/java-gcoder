@@ -1,7 +1,7 @@
 package ${config.java.package.cmd};
 
 import ${config.java.package.cmd}.CmdSign;
-import ${config.java.package.cmd}.CmdCode;
+import ${config.java.package.code}.CmdCode;
 import ${config.java.package.bo}.${table.prefix}.${table.upperCamelName}BO;
 import ${config.java.package.service}.${table.prefix}.service.I${table.upperCamelName}Service;
 import ${config.java.package.cmd}.ACmd;
