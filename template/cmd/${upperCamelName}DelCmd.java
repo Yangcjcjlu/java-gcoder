@@ -1,10 +1,10 @@
 package ${config.java.package.cmd}.${table.prefix};
 
-import ${config.java.package.core.cmd}.CmdSign;
-import ${config.java.package.core.code}.CmdCode;
+import ${config.java.package.cmd}.CmdSign;
+import ${config.java.package.code}.CmdCode;
 import ${config.java.package.bo}.${table.prefix}.${table.upperCamelName}BO;
 import ${config.java.package}.${table.prefix}.service.I${table.upperCamelName}Service;
-import ${config.java.package.core.cmd}.ACmd;
+import ${config.java.package.cmd}.ACmd;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
