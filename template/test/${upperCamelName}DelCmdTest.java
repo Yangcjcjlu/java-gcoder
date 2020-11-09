@@ -4,17 +4,23 @@ import ${config.java.package.cmd}.CmdSign;
 import ${config.java.package.code}.CmdCode;
 import ${config.java.package.vo}.${table.prefix}.${table.upperCamelName}VO;
 import ${config.java.package.test}.ACmdTest;
+import ${config.java.package.service}.${table.prefix}.service.I${table.upperCamelName}Service;
 import org.mockito.InjectMocks;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.mockito.Mock;
+
 
 public class ${table.upperCamelName}DelCmdTest extends ACmdTest {
 
     @InjectMocks
     private ${table.upperCamelName}DelCmd ${table.lowerCamelName}DelCmd;
+
+    @Mock
+    private I${table.upperCamelName}Service ${table.lowerCamelName}Service;
 
     @BeforeClass
     public void setUp() throws Exception {
@@ -27,13 +33,6 @@ public class ${table.upperCamelName}DelCmdTest extends ACmdTest {
         Mockito.reset(this.scheduler);
     }
 
-    @Test
-    public void testExecuteApp() throws Exception {
-        CmdSign sign = CmdSign.Builder.newBuild(null)
-                .setCmdCode(SysConstants.CMD_APP_SCOPE, CmdCode.${table.upperTableName}_DEL)
-                .build();
-        this.${table.lowerCamelName}DelCmd.executeApp(null, sign);
-    }
 
     @Test
     public void testExecuteServer() throws Exception {
@@ -59,11 +58,14 @@ public class ${table.upperCamelName}DelCmdTest extends ACmdTest {
         this.${table.lowerCamelName}DelCmd.executeMop(null, sign);
     }
 
-    @Test
-    public void testVerify() throws Exception {
-        CmdSign sign = CmdSign.Builder.newBuild(null)
-                .setCmdCode(CmdCode.${table.upperTableName}_DEL)
-                .build();
-        this.${table.lowerCamelName}DelCmd.verify(null, sign);
+
+    @Override
+    protected void testParameters() throws Exception {
+
+    }
+
+    @Override
+    protected void testBoundaryValue() throws Exception {
+
     }
 }

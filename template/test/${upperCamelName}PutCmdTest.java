@@ -4,17 +4,23 @@ import ${config.java.package.cmd}.CmdSign;
 import ${config.java.package.code}.CmdCode;
 import ${config.java.package.vo}.${table.prefix}.${table.upperCamelName}VO;
 import ${config.java.package.test}.ACmdTest;
+import ${config.java.package.service}.${table.prefix}.service.I${table.upperCamelName}Service;
 import org.mockito.InjectMocks;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.mockito.Mock;
+
 
 public class ${table.upperCamelName}PutCmdTest extends ACmdTest {
 
     @InjectMocks
     private ${table.upperCamelName}PutCmd ${table.lowerCamelName}PutCmd;
+
+    @Mock
+    private I${table.upperCamelName}Service ${table.lowerCamelName}Service;
 
     @BeforeClass
     public void setUp() throws Exception {
@@ -25,14 +31,6 @@ public class ${table.upperCamelName}PutCmdTest extends ACmdTest {
     @BeforeMethod
     public void resetScheduler() {
         Mockito.reset(this.scheduler);
-    }
-
-    @Test
-    public void testExecuteApp() throws Exception {
-        CmdSign sign = CmdSign.Builder.newBuild(null)
-                .setCmdCode(SysConstants.CMD_APP_SCOPE, CmdCode.${table.upperTableName}_PUT)
-                .build();
-        this.${table.lowerCamelName}PutCmd.executeApp(null, sign);
     }
 
     @Test
@@ -59,11 +57,14 @@ public class ${table.upperCamelName}PutCmdTest extends ACmdTest {
         this.${table.lowerCamelName}PutCmd.executeMop(null, sign);
     }
 
-    @Test
-    public void testVerify() throws Exception {
-        CmdSign sign = CmdSign.Builder.newBuild(null)
-                .setCmdCode(CmdCode.${table.upperTableName}_PUT)
-                .build();
-        this.${table.lowerCamelName}PutCmd.verify(null, sign);
-    }
+
+@Override
+protected void testParameters() throws Exception {
+
+        }
+
+@Override
+protected void testBoundaryValue() throws Exception {
+
+        }
 }
