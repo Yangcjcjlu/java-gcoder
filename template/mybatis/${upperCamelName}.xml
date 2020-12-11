@@ -15,8 +15,7 @@
         select ${table.abbr}.* from ${table.tableName} ${table.abbr}
         <where>
             ${table.abbr}.data_status = 1
-            <%table.fieldArray.filter(function(field){return !field.sqIgnore}).forEach(function(field,index){%>
-            <if test="${field.lowerCamelName}!=null">and ${table.abbr}.`${field.fieldName}`=#{${field.lowerCamelName}}</if><%})%>
+
 
         </where>
     </select>
@@ -26,8 +25,6 @@
         select ${table.abbr}.* from ${table.tableName} ${table.abbr}
         <where>
             ${table.abbr}.data_status = 1
-            <%table.fieldArray.filter(function(field){return !field.sqIgnore}).forEach(function(field,index){%>
-            <if test="${field.lowerCamelName}!=null">and ${table.abbr}.`${field.fieldName}`=#{${field.lowerCamelName}}</if><%})%>
 
         </where>
     </select>
