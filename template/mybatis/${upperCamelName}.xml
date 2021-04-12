@@ -29,6 +29,27 @@
         </where>
     </select>
 
+    <insert id="batchInsert" parameterType="${table.lowerCamelName}BO" useGeneratedKeys="true" keyProperty="id">
+        <foreach collection="list" item="item" separator=";">
+            insert INTO `${table.tableName}` (
+            <trim suffixOverrides=",">
+                <%table.fieldArray.filter(function(field){return !field.sqIgnore}).forEach(function(field,index){%>
+                <if test="item.${field.lowerCamelName}!=null">`${field.fieldName}`,</if><%})%>
+            </trim>
+            )
+
+            VALUES
+
+            (
+            <trim suffixOverrides=",">
+
+                <%table.fieldArray.filter(function(field){return !field.sqIgnore}).forEach(function(field,index){%>
+                <if test="item.${field.lowerCamelName}!=null"> #{item.${field.lowerCamelName}},</if><%})%>
+            </trim>
+            )
+        </foreach>
+    </insert>
+
     <insert id="insert${table.upperCamelName}" parameterType="${table.lowerCamelName}BO" useGeneratedKeys="true" keyProperty="id">
 
         INSERT INTO `${table.tableName}` (
