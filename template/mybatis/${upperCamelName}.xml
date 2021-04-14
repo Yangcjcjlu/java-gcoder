@@ -78,6 +78,19 @@
           id=#{id}
     </update>
 
+    <update id="batchUpdate" parameterType="${table.lowerCamelName}BO">
+        <foreach collection="list" item="item" separator=";">
+        update `${table.tableName}`
+        SET
+            <trim suffixOverrides=",">
+           <%table.fieldArray.filter(function(field){return !field.sqIgnore}).forEach(function(field,index){%>
+            <if test="item.${field.lowerCamelName}!=null">`${field.fieldName}`=#{item.${field.lowerCamelName}},</if><%})%>
+            </trim>
+        WHERE
+          id=#{item.id}
+        </foreach>
+    </update>
+
     <update id="delete${table.upperCamelName}" parameterType="${table.lowerCamelName}BO">
         update `${table.tableName}`
         SET
