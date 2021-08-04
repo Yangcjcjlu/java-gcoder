@@ -10,7 +10,7 @@ MysqlEsTypeMapFilterPlugin.prototype.do = function (tables,config) {
     MysqlEsTypeMapFilterPlugin.__super__.do();
     let tsTypeMap = {
         "int":"keyword",
-        "tinyint":"keyword",
+        "tinyint":"long",
         "smallint":"keyword",
         "bigint":"keyword",
         "mediumint":"keyword",
@@ -18,9 +18,9 @@ MysqlEsTypeMapFilterPlugin.prototype.do = function (tables,config) {
         "float":"keyword",
         "double":"keyword",
         "decimal":"keyword",
-        "date":"Date",
-        "datetime":"Date",
-        "timestamp":"Date",
+        "date":"date",
+        "datetime":"date",
+        "timestamp":"date",
         "char":"keyword",
         "varchar":"keyword",
         "text":"text",
