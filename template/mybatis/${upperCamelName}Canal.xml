@@ -1,5 +1,5 @@
 
-<%tables.forEach(function(table){%>
+
 <select id="load${table.upperCamelName}" resultMap="${table.lowerCamelName}Result">
     select
     <%table.fieldArray.forEach(function(field,index){%>
@@ -12,4 +12,3 @@
 
     </where>
 </select>
-<%})%>
