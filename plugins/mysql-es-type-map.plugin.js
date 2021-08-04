@@ -27,6 +27,9 @@ MysqlEsTypeMapFilterPlugin.prototype.do = function (tables,config) {
         "longtext":"String",
         "tinytext":"String",
     }
+
+    console.log("tables contains"+ JSON.stringify(tables));
+
     for(let table of tables){
         let splitArray = table.tableName.split("_");
         let abbr = "";

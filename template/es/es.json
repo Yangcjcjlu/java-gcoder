@@ -1,3 +1,4 @@
+<%tables.forEach(function(table){%>
 {
   "mappings": {
     "_doc": {
@@ -12,3 +13,4 @@
     }
   }
 }
+<%})%>
