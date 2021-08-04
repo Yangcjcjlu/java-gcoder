@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "${field.lowerCamelName}": {
+          "type": "${field.esType}"
+        }
+      }
+    }
+  }
+}

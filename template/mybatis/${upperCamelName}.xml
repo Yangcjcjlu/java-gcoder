@@ -67,28 +67,7 @@
 
     </insert>
 
-    <insert id="replace" parameterType="${table.lowerCamelName}BO" useGeneratedKeys="true" keyProperty="id">
 
-        replace INTO `${table.tableName}` (
-        <trim suffixOverrides=",">
-            <if test="id!=null or id==0">
-                `id`,
-            </if>
-            <%table.fieldArray.filter(function(field){return !field.sqIgnore}).forEach(function(field,index){%>
-            <if test="${field.lowerCamelName}!=null">`${field.fieldName}`,</if><%})%>
-        </trim>
-        )
-        VALUES(
-        <trim suffixOverrides=",">
-            <if test="id!=null or id==0">
-                #{id},
-            </if>
-            <%table.fieldArray.filter(function(field){return !field.sqIgnore}).forEach(function(field,index){%>
-            <if test="${field.lowerCamelName}!=null"> #{${field.lowerCamelName}},</if><%})%>
-        </trim>
-        )
-
-    </insert>
 
     <update id="update${table.upperCamelName}" parameterType="${table.lowerCamelName}BO">
         update `${table.tableName}`

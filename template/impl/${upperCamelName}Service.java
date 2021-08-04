@@ -30,12 +30,12 @@ public class ${table.upperCamelName}Service implements I${table.upperCamelName}S
 
     @Override
     public void insert(${table.upperCamelName}BO ${table.lowerCamelName}BO){
-        this.daoRouter.insert("${table.upperCamelName}.insert${table.upperCamelName}", ${table.lowerCamelName}BO);
+        this.daoRouter.insert("A${table.upperCamelName}.insert${table.upperCamelName}", ${table.lowerCamelName}BO);
     }
 
     @Override
     public void update(${table.upperCamelName}BO ${table.lowerCamelName}BO){
-        this.daoRouter.update("${table.upperCamelName}.update${table.upperCamelName}", ${table.lowerCamelName}BO);
+        this.daoRouter.update("A${table.upperCamelName}.update${table.upperCamelName}", ${table.lowerCamelName}BO);
     }
 
     @Override
