@@ -3,7 +3,7 @@
 <select id="load${table.upperCamelName}" resultMap="${table.lowerCamelName}Result">
     select
     <%table.fieldArray.forEach(function(field,index){%>
-    ${table.abbr}.${field.fieldName},</if><%})%>
+    ${table.abbr}.${field.fieldName},<%})%>
     from ${table.tableName} ${table.abbr}
     <where>
 
