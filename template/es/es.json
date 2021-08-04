@@ -7,7 +7,7 @@
         <%table.fieldArray.filter(function(field){return !field.sqIgnore}).forEach(function(field,index){%>
     "${field.lowerCamelName}": {
       "type": "${field.esType}"
-        },</if><%})%>
+        },<%})%>
 
       }
     }
