@@ -22,10 +22,10 @@ MysqlEsTypeMapFilterPlugin.prototype.do = function (tables,config) {
         "datetime":"Date",
         "timestamp":"Date",
         "char":"keyword",
-        "varchar":"String",
-        "text":"String",
-        "longtext":"String",
-        "tinytext":"String",
+        "varchar":"keyword",
+        "text":"text",
+        "longtext":"text",
+        "tinytext":"text",
     }
 
     console.log("tables contains"+ JSON.stringify(tables));
