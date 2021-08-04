@@ -1,0 +1,12 @@
+<select id="load${table.upperCamelName}" resultMap="${table.lowerCamelName}Result">
+    select
+    <%table.fieldArray.forEach(function(field,index){%>
+    ${table.abbr}.${field.fieldName},</if><%})%>
+    from ${table.tableName} ${table.abbr}
+    <where>
+
+        <%table.fieldArray.filter(function(field){return !field.sqIgnore}).forEach(function(field,index){%>
+        <if test="${field.lowerCamelName}!=null">and `${field.fieldName}`=#{${field.lowerCamelName}}</if><%})%>
+
+    </where>
+</select>
